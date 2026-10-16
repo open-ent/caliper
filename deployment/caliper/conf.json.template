@@ -1,0 +1,32 @@
+    {
+      "name": "fr.openent~caliper~${caliperVersion}",
+      "config": {
+        "main" : "fr.openent.caliper.Caliper",
+        "port" : 8174,
+        "app-name" : "Caliper",
+        "app-address" : "/caliper",
+        "app-type" : "SYSTEM",
+        "host": "${host}",
+        "ssl" : $ssl,
+        "auto-redeploy": false,
+        "userbook-host": "${host}",
+        "integration-mode" : "HTTP",
+        "app-registry.port" : 8012,
+        "mode" : "${mode}",
+        "entcore.port" : 8009,
+        "sql" : true,
+        "mongodb" : false,
+        "db-schema" : "caliper",
+        "caliper" : {
+          "issuer" : "${host}",
+          "private-key" : "${caliperPrivateKeyPem}",
+          "kid" : "${caliperKid}",
+          "access-token-ttl-seconds" : 3600,
+          "max-limit" : 1000,
+          "sensor" : {
+            "interval-seconds" : 300,
+            "endpoints" : []
+          }
+        }
+      }
+    }
